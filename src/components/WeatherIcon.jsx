@@ -9,7 +9,9 @@ const WeatherIcon = () => {
   const getWeather = async () => {
     try {
       const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=a53a85f6be8c0c75aa36947fea59b849&lang=kr&units=metric`
+        `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${
+          import.meta.env.VITE_API_KEY //API키를 dotenv에서 가져오기
+        }&lang=kr&units=metric`
       );
 
       console.log(response);
