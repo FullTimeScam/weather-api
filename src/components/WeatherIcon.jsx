@@ -34,6 +34,8 @@ const WeatherIcon = () => {
     getWeather();
   }, [latitude]);
 
+  if (!weatherData) return <div>loading...</div>;
+
   //   return <div>{weatherData && weatherData.name}</div>; //똑같다
   return (
     <div className="text-xs flex items-center">
@@ -43,7 +45,7 @@ const WeatherIcon = () => {
           src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`} //문서 참고 https://openweathermap.org/weather-conditions
         />
       )}
-      <div>
+      <div className="w-16">
         <div className="font-semibold">{weatherData?.name}</div>
         <div>{weatherData?.main.temp.toFixed(1)}℃</div>
       </div>
