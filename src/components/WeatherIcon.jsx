@@ -39,15 +39,13 @@ const WeatherIcon = () => {
   //   return <div>{weatherData && weatherData.name}</div>; //똑같다
   return (
     <div className="text-xs flex items-center">
-      {weatherData && (
-        <img
-          className="w-12 h-12"
-          src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`} //문서 참고 https://openweathermap.org/weather-conditions
-        />
-      )}
+      <img
+        className="w-12 h-12"
+        src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`} //문서 참고 https://openweathermap.org/weather-conditions
+      />
       <div className="w-16">
         <div className="font-semibold">{weatherData?.name}</div>
-        <div>{weatherData?.main.temp.toFixed(1)}℃</div>
+        <div>{weatherData.main.temp.toFixed(1)}℃</div>
       </div>
     </div>
   );
