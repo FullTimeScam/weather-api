@@ -34,7 +34,8 @@ const WeatherIcon = () => {
     getWeather();
   }, [latitude]);
 
-  if (!weatherData) return <div>loading...</div>;
+  if (!weatherData)
+    return <div className="w-28 h-12 flex items-center">loading...</div>;
 
   //   return <div>{weatherData && weatherData.name}</div>; //똑같다
   return (
