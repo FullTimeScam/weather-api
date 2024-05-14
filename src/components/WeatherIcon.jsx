@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
+import { TiWeatherSunny } from "react-icons/ti";
 
 const WeatherIcon = () => {
   const [latitude, setLatitude] = useState();
@@ -39,11 +40,12 @@ const WeatherIcon = () => {
 
   //   return <div>{weatherData && weatherData.name}</div>; //똑같다
   return (
-    <div className="text-xs flex items-center">
-      <img
+    <div className="text-xs flex items-center gap-2">
+      <TiWeatherSunny size={30} className="text-red-500" />
+      {/* <img
         className="w-12 h-12"
         src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`} //문서 참고 https://openweathermap.org/weather-conditions
-      />
+      /> */}
       <div className="w-16">
         <div className="font-semibold">{weatherData?.name}</div>
         <div>{weatherData.main.temp.toFixed(1)}℃</div>
